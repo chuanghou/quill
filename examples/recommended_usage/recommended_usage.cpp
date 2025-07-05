@@ -25,6 +25,8 @@
 #include "quill/LogMacros.h"
 #include "quill/Logger.h"
 
+#include "foo.h"
+
 // We utilize the global_logger_a from the quill_wrapper library.
 // The use of a global logger is optional.
 // Alternatively, we could include "quill/Frontend.h" and use `quill::Frontend::get_logger(..)`
@@ -46,4 +48,11 @@ int main()
   LOG_WARNING(global_logger_a, "This is a log warning example {}", 6);
   LOG_ERROR(global_logger_a, "This is a log error example {}", 7);
   LOG_CRITICAL(global_logger_a, "This is a log critical example {}", 118);
+
+  Foo foo;
+  foo.hello();
+
+  bar(global_logger_a);
+  bar();
+  bar_global();
 }

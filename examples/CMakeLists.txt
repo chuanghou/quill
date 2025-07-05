@@ -1,3 +1,5 @@
+add_subdirectory(libexample)
+
 add_subdirectory(recommended_usage)
 add_subdirectory(shared_library)
 

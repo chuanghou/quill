@@ -1,9 +1,10 @@
 add_subdirectory(quill_static_lib)
+add_subdirectory(libfoo)
 
 set(EXAMPLE_TARGETS
         quill_example_recommended_usage
         quill_example_std_types_logging
-        quill_example_use_overwrite_macros
+#        quill_example_use_overwrite_macros
 )
 
 # Add example executables
@@ -14,7 +15,7 @@ foreach (example_target ${EXAMPLE_TARGETS})
 
     add_executable(${example_target} ${source_file})
     set_common_compile_options(${example_target})
-    target_link_libraries(${example_target} quill_static_lib_recommended_usage)
+    target_link_libraries(${example_target} quill_static_lib_recommended_usage foo2)
 endforeach ()
 
 install(TARGETS ${EXAMPLE_TARGETS}
